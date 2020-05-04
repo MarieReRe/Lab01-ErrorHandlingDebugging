@@ -84,6 +84,11 @@ namespace ExceptionHandlingAndDebugging
             {
                 sum += array[i];
             }
+            if(sum < 20)
+            {
+                Console.WriteLine("Your sum of {0} is too low, please enter numbers that sum greater than 20!", sum);
+            }
+
             return sum;
         }
     }
