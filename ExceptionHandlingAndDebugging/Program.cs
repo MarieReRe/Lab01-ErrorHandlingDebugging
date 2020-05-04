@@ -19,10 +19,20 @@ namespace ExceptionHandlingAndDebugging
         }
         public static void StartSequence()
         {
-            //prompt to input a number greater than zero
-            Console.WriteLine("Enter a number greater than zero please:");
-            //parse to int
-            int userNumber = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                //prompt to input a number greater than zero
+                Console.WriteLine("Enter a number greater than zero please:");
+                string userNumberChosen = Console.ReadLine();
+                //parse to int
+                int arrayLength = Convert.ToInt32(userNumberChosen);
+            }
+            catch (FormatException formatEx)
+            {
+
+                Console.WriteLine("Your input is in the wrong format: {0}", formatEx.Message);
+            }
+
 
         }
     }
