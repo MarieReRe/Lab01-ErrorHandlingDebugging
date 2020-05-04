@@ -34,6 +34,13 @@ namespace ExceptionHandlingAndDebugging
 
                 //populate the users array with the length chosen by user
                 int[] userArray = Populate(array);
+
+                int sum = GetSum(array);
+
+
+
+                //return array to the user
+                Console.WriteLine("The sum is {0}", sum);
             }
             catch (FormatException formatEx)
             {
@@ -67,6 +74,22 @@ namespace ExceptionHandlingAndDebugging
                 Console.WriteLine("You entered {0}", arrayLength[j]);
             }
             return arrayLength;
+        }
+        public static int GetSum(int[] array)
+        {
+            //declare an int variable named sum
+            int sum = 0;
+            //iterate through and populate the variable
+            for (int i = 0; i < array.Length; i++)
+            {
+                sum += array[i];
+            }
+            if(sum < 20)
+            {
+                Console.WriteLine("Your sum of {0} is too low, please enter numbers that sum greater than 20!", sum);
+            }
+
+            return sum;
         }
     }
 }
