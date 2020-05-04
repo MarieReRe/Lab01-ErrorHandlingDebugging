@@ -32,6 +32,10 @@ namespace ExceptionHandlingAndDebugging
 
                 Console.WriteLine("Your input is in the wrong format: {0}", formatEx.Message);
             }
+            catch(OverflowException overflowEx)
+            {
+                Console.WriteLine("There is data overflow: {0}", overflowEx.Message);
+            }
 
 
         }
