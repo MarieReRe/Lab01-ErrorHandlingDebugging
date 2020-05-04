@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
+using System.Globalization;
 
 namespace ExceptionHandlingAndDebugging
 {
@@ -26,18 +28,45 @@ namespace ExceptionHandlingAndDebugging
                 string userNumberChosen = Console.ReadLine();
                 //parse to int
                 int arrayLength = Convert.ToInt32(userNumberChosen);
+
+                //set up an empty array for the user to populate
+                int[] array = new int[arrayLength];
+
+                //populate the users array with the length chosen by user
+                int[] userArray = Populate(array);
             }
             catch (FormatException formatEx)
             {
 
                 Console.WriteLine("Your input is in the wrong format: {0}", formatEx.Message);
             }
-            catch(OverflowException overflowEx)
+            catch (OverflowException overflowEx)
             {
                 Console.WriteLine("There is data overflow: {0}", overflowEx.Message);
             }
 
 
+        }
+        public static int[] Populate(int[] arrayLength)
+        {
+
+            //we need a for loop to fill the user array
+            for (int i = 0; i < arrayLength.Length; i++)
+            {
+                //ask the user for numbers, ask as many times as the length they have set above
+                Console.WriteLine("Please select {0} numbers, hitting enter after you are satisfied with your number choice.", arrayLength.Length);
+                string userArrayNumberChosen = Console.ReadLine();
+                //parse the number they chose into an int
+                int arrayNumber = int.Parse(userArrayNumberChosen);
+                arrayLength[i] = arrayNumber;
+
+            }
+            //we need to return the array to the user
+            for(int j = 0; j < arrayLength.Length; j++)
+            {
+                Console.WriteLine("You entered {0}", arrayLength[j]);
+            }
+            return arrayLength;
         }
     }
 }
