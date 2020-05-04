@@ -1,7 +1,7 @@
 # Lab01-ErrorHandlingDebigging
 ##### Start Time: 4:40pm
 ##### End Time: 
-### Total Time:
+##### Total Time:
 
 ## Problem Domain
 Within a new .NET Core console application, follow the instructions below to create a math game that takes user input,
