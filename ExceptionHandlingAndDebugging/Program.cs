@@ -19,6 +19,10 @@ namespace ExceptionHandlingAndDebugging
         }
         public static void StartSequence()
         {
+            //prompt to input a number greater than zero
+            Console.WriteLine("Enter a number greater than zero please:");
+            //parse to int
+            int userNumber = Convert.ToInt32(Console.ReadLine());
 
         }
     }
