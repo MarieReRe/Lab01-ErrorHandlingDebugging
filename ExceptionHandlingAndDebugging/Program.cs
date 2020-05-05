@@ -37,10 +37,13 @@ namespace ExceptionHandlingAndDebugging
 
                 int sum = GetSum(array);
 
+                int product = GetProduct(array, sum);
+
 
 
                 //return array to the user
                 Console.WriteLine("The sum is {0}", sum);
+                Console.WriteLine("The product is {0}", product);
             }
             catch (FormatException formatEx)
             {
@@ -84,12 +87,35 @@ namespace ExceptionHandlingAndDebugging
             {
                 sum += array[i];
             }
+
+            //throw a sum if user input is less than 20
             if(sum < 20)
             {
                 Console.WriteLine("Your sum of {0} is too low, please enter numbers that sum greater than 20!", sum);
             }
 
             return sum;
+        }
+        public static int GetProduct(int[] array, int sum)
+        {
+            //set product to zero
+            int product = 0;
+            // set user input limit of arrayLength
+            int userLimit = array.Length;
+            try
+            {
+                Console.WriteLine("Please choose a number between 1 and {0}", userLimit);
+                string userChoice = Console.ReadLine();
+                int chosenNumber = int.Parse(userChoice);
+
+                product = sum * chosenNumber;
+            }
+            catch (Exception IndexOutOfRange)
+            {
+                Console.WriteLine("Index is out of range {0}", IndexOutOfRange.Message);
+                throw;
+            }
+            return product;
         }
     }
 }
