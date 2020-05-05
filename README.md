@@ -35,4 +35,7 @@ Your solution should include the following:
 6. GetQuotient
 
 ## Visuals
+</hr>
+
+![Starting your app](https://github.com/mrsantons/Lab01-ErrorHandlingDebugging/blob/master/photos/GameStart.jpg)
 
