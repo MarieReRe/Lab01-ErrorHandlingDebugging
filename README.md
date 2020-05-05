@@ -37,5 +37,7 @@ Your solution should include the following:
 ## Visuals
 </hr>
 
+Start of your console application
 ![Starting your app](https://github.com/mrsantons/Lab01-ErrorHandlingDebugging/blob/master/photos/GameStart.jpg)
+![App Completion](https://github.com/mrsantons/Lab01-ErrorHandlingDebugging/blob/master/photos/GameCompletion.jpg)
 
