@@ -18,6 +18,10 @@ namespace ExceptionHandlingAndDebugging
                 //write a generic exception and let the user know something went wrong.
                 Console.WriteLine("Sorry, something went wrong! Exception{0}", ex.Message);
             }
+            finally
+            {
+                Console.WriteLine("Congrats you're done, I don't like math either");
+            }
         }
         public static void StartSequence()
         {
@@ -39,13 +43,21 @@ namespace ExceptionHandlingAndDebugging
 
                 int product = GetProduct(array, sum);
 
+                decimal quotient = GetQuotient(product);
+
 
 
                 //return array to the user
                 Console.WriteLine("The sum is {0}", sum);
                 Console.WriteLine("The product is {0}", product);
+                Console.WriteLine("The quotient is {0}", quotient);
+                Console.WriteLine("Thanks for playing, I guess!");
+
+
+
             }
             catch (FormatException formatEx)
+
             {
 
                 Console.WriteLine("Your input is in the wrong format: {0}", formatEx.Message);
@@ -116,6 +128,28 @@ namespace ExceptionHandlingAndDebugging
                 throw;
             }
             return product;
+        }
+        public static decimal GetQuotient(int product)
+        {
+            //set the dividend
+            int dividend = 0;
+            try
+            {
+                Console.WriteLine("Please choose a number to divide your product by {0}", product);
+                string userDivider = Console.ReadLine();
+                dividend = Convert.ToInt32(userDivider);
+            }
+            catch (DivideByZeroException ex)
+            {
+                if(dividend == 0)
+                {
+                    Console.WriteLine("Why are you trying to divide by zero: {0}", ex.Message);
+                }
+              
+            }
+            decimal quotient = product / dividend;
+            return quotient;
+
         }
     }
 }
