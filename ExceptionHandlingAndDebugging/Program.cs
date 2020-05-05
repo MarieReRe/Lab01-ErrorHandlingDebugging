@@ -77,6 +77,7 @@ namespace ExceptionHandlingAndDebugging
             {
                 //ask the user for numbers, ask as many times as the length they have set above
                 Console.WriteLine($"Please select ({i + 1} of {arrayLength.Length})");
+                string userArrayNumberChosen = Console.ReadLine();
                 //parse the number they chose into an int
                 int arrayNumber = int.Parse(userArrayNumberChosen);
                 arrayLength[i] = arrayNumber;
